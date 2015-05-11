@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="color-picker">
+  <style>
+    .boldFace { font-weight: bold }
+  </style>
+  <template>
+    This is <span class="boldFace">{{owner}}</span>'s color-picker.
+    He likes the color <span style$="{{_setColorStyle(color)}}">{{color}}</span>.
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'color-picker',
+    properties: {
+      color: {
+        type: String,
+        reflectToAttribute: true
+      },
+      owner: {
+        type: String,
+        reflectToAttribute: true
+      }
+    },
+    hostAttributes: {
+      color: "red",
+      owner: "Daniel"
+    },
+    _setColorStyle: function(color) {
+      return "color: " + color;
+    }
+  });
+</script>

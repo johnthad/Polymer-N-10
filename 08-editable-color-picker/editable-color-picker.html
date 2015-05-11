@@ -1,0 +1,40 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="editable-color-picker">
+  <style>
+    .boldFace { font-weight: bold }
+  </style>
+  <template>
+    <p>
+    This is <span class="boldFace">{{owner}}</span>'s editable-color-picker.
+    He likes the color <span style$="{{_setColorStyle(color)}}">{{color}}</span>.
+    </p>
+    <button on-click="_setFocus">Set focus to text input</button>
+    <input id="nameInput" value="{{owner}}"
+           placeholder="Your name here...">
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'editable-color-picker',
+    properties: {
+      color: {
+        type: String
+      },
+      owner: {
+        type: String
+      }
+    },
+    hostAttributes: {
+      color: "red",
+      owner: "Daniel"
+    },
+    _setColorStyle: function(color) {
+      return "color: " + color;
+    },
+    _setFocus: function() {
+      this.$.nameInput.focus();
+    }
+  });
+</script>

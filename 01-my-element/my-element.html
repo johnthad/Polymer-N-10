@@ -1,0 +1,31 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+
+<dom-module id="my-element">
+  <template>
+    <span>I'm <b>my-element</b>. This is my Shady DOM.</span><br/>
+    
+    <!-- NOTE: You cannot use myaarray[x] notion for JSON arrays -->
+    <!-- yet. Instead use myaarray.x.foo notion.                 -->
+    <!--
+    <iron-ajax url="http://localhost/~thad/queries.json" auto
+               last-response="{{resp}}"></iron-ajax>
+    <textarea value="{{resp.queries.0.title}}"></textarea>
+    -->
+    
+    <iron-ajax url="http://api.openweathermap.org/data/2.5/weather?type=accurate&units=imperial&cnt=1&q=Charlottesville" auto
+               last-response="{{resp}}"></iron-ajax>
+    <textarea value="{{resp.main.temp}}"></textarea>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'my-element',
+    properties: {
+      resp: { 
+        type: Object 
+      } 
+    }
+  });
+</script>

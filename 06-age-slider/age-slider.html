@@ -1,0 +1,56 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="age-slider">
+  <style>
+    .boldFace { font-weight: bold }
+  </style>
+  <template>
+    This is <span class="boldFace">[[owner]]</span>'s age-slider.
+    <span class="boldFace">{{name}}</span> lets me borrow it.
+    He likes the color <span style$="{{_setColorStyle(color)}}">[[color]]</span>.
+    I am <span class="boldFace">{{age}}</span> years old.
+    <p><label for="ageInput">Age:</label>
+    <input id="ageInput" type="range"
+           value ="{{age::input}}">
+    <label for="nameInput">Name:</label>
+    <input id="nameInput" type="text" value="{{name::input}}"
+           placeholder="Enter name..."></p>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'age-slider',
+    properties: {
+      age: {
+        type: Number
+      },
+      name: {
+        type: String,
+        observer: '_nameChanged'
+      },
+      color: {
+        type: String
+      },
+      owner: {
+        type: String
+      }
+    },
+    hostAttributes: {
+      name: "Daniel",
+      age: 25,
+      color: "red",
+      owner: "Eric"
+    },
+    _setColorStyle: function(color) {
+      return "color: " + color;
+    },
+    _nameChanged: function() {
+      if (this.name) {
+        // Ensure name is capitalized
+        this.name = this.name[0].toUpperCase() +
+                    this.name.slice(1);
+      }
+    }
+  });
+</script>

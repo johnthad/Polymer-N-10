@@ -1,0 +1,22 @@
+{
+  "name": "fav-color",
+  "version": "0.0.0",
+  "homepage": "https://github.com/johnthad/polymern10",
+  "authors": [
+    "Thad Humphries <thad.humphries@gmail.com>"
+  ],
+  "keywords": [
+    "web-component"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "polymer/polymer#^0.9.0-rc.1"
+  }
+}

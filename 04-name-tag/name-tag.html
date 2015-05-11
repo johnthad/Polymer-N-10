@@ -1,0 +1,22 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="name-tag">
+  <style>
+    :host span { font-weight: bold }
+  </style>
+  <template>
+    This is <span>{{owner}}</span>'s name-tag element.
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'name-tag',
+    properties: {
+      owner: {
+        type: String,
+        value: "Daniel"
+      }
+    }
+  });
+</script>
