@@ -16,41 +16,42 @@
     <input id="nameInput" type="text" value="{{name::input}}"
            placeholder="Enter name..."></p>
   </template>
+  
+  <script>
+    Polymer({
+      is: 'age-slider',
+      properties: {
+        age: {
+          type: Number
+        },
+        name: {
+          type: String,
+          observer: '_nameChanged'
+        },
+        color: {
+          type: String
+        },
+        owner: {
+          type: String
+        }
+      },
+      hostAttributes: {
+        name: "Daniel",
+        age: 25,
+        color: "red",
+        owner: "Eric"
+      },
+      _setColorStyle: function(color) {
+        return "color: " + color;
+      },
+      _nameChanged: function() {
+        if (this.name) {
+          // Ensure name is capitalized
+          this.name = this.name[0].toUpperCase() +
+                      this.name.slice(1);
+        }
+      }
+    });
+  </script>
 </dom-module>
 
-<script>
-  Polymer({
-    is: 'age-slider',
-    properties: {
-      age: {
-        type: Number
-      },
-      name: {
-        type: String,
-        observer: '_nameChanged'
-      },
-      color: {
-        type: String
-      },
-      owner: {
-        type: String
-      }
-    },
-    hostAttributes: {
-      name: "Daniel",
-      age: 25,
-      color: "red",
-      owner: "Eric"
-    },
-    _setColorStyle: function(color) {
-      return "color: " + color;
-    },
-    _nameChanged: function() {
-      if (this.name) {
-        // Ensure name is capitalized
-        this.name = this.name[0].toUpperCase() +
-                    this.name.slice(1);
-      }
-    }
-  });
-</script>

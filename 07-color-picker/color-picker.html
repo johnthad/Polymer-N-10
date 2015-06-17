@@ -8,27 +8,27 @@
     This is <span class="boldFace">{{owner}}</span>'s color-picker.
     He likes the color <span style$="{{_setColorStyle(color)}}">{{color}}</span>.
   </template>
-</dom-module>
 
-<script>
-  Polymer({
-    is: 'color-picker',
-    properties: {
-      color: {
-        type: String,
-        reflectToAttribute: true
+  <script>
+    Polymer({
+      is: 'color-picker',
+      properties: {
+        color: {
+          type: String,
+          reflectToAttribute: true
+        },
+        owner: {
+          type: String,
+          reflectToAttribute: true
+        }
       },
-      owner: {
-        type: String,
-        reflectToAttribute: true
+      hostAttributes: {
+        color: "red",
+        owner: "Daniel"
+      },
+      _setColorStyle: function(color) {
+        return "color: " + color;
       }
-    },
-    hostAttributes: {
-      color: "red",
-      owner: "Daniel"
-    },
-    _setColorStyle: function(color) {
-      return "color: " + color;
-    }
-  });
-</script>
+    });
+  </script>
+</dom-module>

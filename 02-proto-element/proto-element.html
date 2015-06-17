@@ -4,13 +4,13 @@
   <template>
     <span>I'm <b>proto-element</b>. Check out my prototype.</span>
   </template>
+  
+  <script>
+    Polymer({
+      is: 'proto-element',
+      ready: function() {
+        console.log("ready");
+      }
+    });
+  </script>
 </dom-module>
-
-<script>
-  Polymer({
-    is: 'proto-element',
-    ready: function() {
-      console.log("ready");
-    }
-  });
-</script>
