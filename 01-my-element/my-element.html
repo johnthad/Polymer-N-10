@@ -3,7 +3,7 @@
 
 <dom-module id="my-element">
   <template>
-    <span>I'm <b>my-element</b>. This is my Shady DOM.</span><br/>
+    <span>I'm <b>my-element</b>. This is my local DOM.</span><br/>
     
     <!-- NOTE: You cannot use myaarray[x] notion for JSON arrays -->
     <!-- yet. Instead use myaarray.x.foo notion.                 -->
@@ -17,15 +17,16 @@
                last-response="{{resp}}"></iron-ajax>
     <textarea value="{{resp.main.temp}}"></textarea>
   </template>
-</dom-module>
 
-<script>
-  Polymer({
-    is: 'my-element',
-    properties: {
-      resp: { 
-        type: Object 
-      } 
-    }
-  });
-</script>
+  <script>
+    Polymer({
+      is: 'my-element',
+      properties: {
+        resp: { 
+          type: Object 
+        } 
+      }
+    });
+  </script>
+  
+</dom-module>

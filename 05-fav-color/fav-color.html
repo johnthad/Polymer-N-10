@@ -14,23 +14,23 @@ See https://groups.google.com/forum/#!topic/polymer-dev/hYb7IkBd54I
     <span>[[owner]]</span> likes the color 
     <span style$="{{_setColorStyle(color)}}">[[color]]</span>.
   </template>
-</dom-module>
 
-<script>
-  Polymer({
-    is: 'fav-color',
-    properties: {
-      owner: {
-        type: String,
-        value: "Daniel"
+  <script>
+    Polymer({
+      is: 'fav-color',
+      properties: {
+        owner: {
+          type: String,
+          value: "Daniel"
+        },
+        color: {
+          type: String,
+          value: "red"
+        }
       },
-      color: {
-        type: String,
-        value: "red"
+      _setColorStyle: function(color) {
+        return "color: " + color;
       }
-    },
-    _setColorStyle: function(color) {
-      return "color: " + color;
-    }
-  });
-</script>
+    });
+  </script>
+</dom-module>
