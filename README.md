@@ -5,9 +5,14 @@ These examples were orginally published as "[Polymer in 10 Minutes](https://www.
 
 As I was finishing these, 0.9 was announced, so I modified the bower.json files and ran them again. They all work.
 
-I've used a demo.html file to load the components vs. index.html. All are designed to be tested with the *polyserve* tool as described by Rob Dobson in [Polycasts #14](https://www.youtube.com/watch?v=p7Q1mQtFGM8).
+All examples run with the *polyserve* tool as described by Rob Dobson in [Polycasts #14](https://www.youtube.com/watch?v=p7Q1mQtFGM8).
 
 Update for 1.0
 --------------
 
 I have updated these demos for Polymer 1.0. The biggest change has been to move the `<script>` tags inside the `<dom-module>` as that is [the preferred approach](https://github.com/Polymer/docs/issues/1124).
+
+Update for 1.1
+--------------
+
+Done as a sanity check on Polymer 1.1. Also renamed all demo.html files to index.html.
